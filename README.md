@@ -1,1 +1,1 @@
-Jenkins automatic build trigger test
+Testing Jenkins automatic build trigger test through Github webhooks
