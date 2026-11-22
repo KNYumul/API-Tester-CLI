@@ -14,20 +14,16 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 echo 'Setting up Python environment...'
-
-                bat 'py -3 -m venv venv'
-
-                bat 'venv\\Scripts\\python -m pip install --upgrade pip'
-
-                bat 'venv\\Scripts\\python -m pip install -r requirements.txt'
+                bat '"C:/Users/win10/AppData/Local/Python/pythoncore-3.15-64/python.exe" -m venv venv'
+                bat 'venv\\Scripts\\python.exe -m pip install --upgrade pip'
+                bat 'venv\\Scripts\\python.exe -m pip install -r requirements.txt'
             }
         }
 
         stage('Run Automated Tests') {
             steps {
                 echo 'Running Python unit tests...'
-
-                bat 'venv\\Scripts\\python -m unittest discover -s tests -v'
+                bat 'venv\\Scripts\\python.exe -m unittest discover -s tests -v'
             }
         }
     }
